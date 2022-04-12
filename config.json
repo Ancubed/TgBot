@@ -1,0 +1,11 @@
+{
+    "bot": {
+        "token": "5129528650:AAEHDxGTIqWixw9oL941qyACI0cljbHXlsk"
+    },
+    "url": "",
+    "port": 3000,
+    "proxy": "http://proxy.net.osu.ru:3128",
+
+    "apiKey": "",
+    "adminChatId": 357979728
+}
