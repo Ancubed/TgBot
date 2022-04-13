@@ -40,7 +40,6 @@ router.post('/send-message', async (req, res, next) => {
 router.post('/distribute-message', async (req, res, next) => {
     try {
         let { simpleId, message } = req.body;
-        console.log(req.body)
         if (!simpleId || !message) throw createError(400, 'Не передан simpleId или message');
 
         let subscribe = await botModel.getSubscribe(simpleId);
