@@ -5,7 +5,7 @@ const router = express.Router();
 const createError = require('http-errors');
 
 const bot = require('../bot/bot');
-const botModel = require('../bot/botModel');
+const botModel = require('../models/botModel');
 
 const apiAccess = require('../middlewares/apiAccess');
 
