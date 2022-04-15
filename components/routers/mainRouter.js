@@ -29,7 +29,7 @@ router.post('/send-message', async (req, res, next) => {
         let { chatId, message } = req.body;
         if (!chatId || !message) throw createError(400, 'Не передан chatId или message');
 
-        bot.sendMessage(chatId, message);
+        bot.sendMessage(chatId, message, { parse_mode: 'markdown' });
 
         res.json({ success: true });
     } catch (err) {
@@ -47,7 +47,7 @@ router.post('/distribute-message', async (req, res, next) => {
         if (!subscribe.subscribers || subscribe.subscribers.length === 0) throw createError(404, 'У подписки нет подписчиков');
 
         subscribe.subscribers.map(subscriber => {
-            bot.sendMessage(subscriber, message);
+            bot.sendMessage(subscriber, message, { parse_mode: 'markdown' });
         });
 
         res.json({ success: true });
