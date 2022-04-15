@@ -4,12 +4,17 @@ const botModel = require('../models/botModel');
 
 const config = require('../../config.json');
 
-const bot = new TelegramBot(config.bot.token, { 
-    polling: true,
-    request: {
+const botOptions = { 
+    polling: true
+}
+
+if (process.env.NODE_ENV !== 'production') {
+    botOptions.request = {
         proxy: config.proxy,
     }
-});
+}
+
+const bot = new TelegramBot(config.bot.token, botOptions);
 
 async function isAdmin(chatId) {
     if (chatId == config.admin.chatId) return true;
