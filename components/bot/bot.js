@@ -6,9 +6,9 @@ const config = require('../../config.json');
 
 const bot = new TelegramBot(config.bot.token, { 
     polling: true,
-    // request: {
-    //     proxy: config.proxy,
-    // }
+    request: {
+        proxy: config.proxy,
+    }
 });
 
 async function isAdmin(chatId) {

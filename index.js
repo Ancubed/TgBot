@@ -18,6 +18,8 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 app.use('/', routers);
 
 app.listen(port, () => {
