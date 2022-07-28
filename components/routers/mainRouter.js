@@ -47,7 +47,7 @@ router.post('/distribute-message', async (req, res, next) => {
         if (!subscribe.subscribers || subscribe.subscribers.length === 0) throw createError(404, 'У подписки нет подписчиков');
 
         subscribe.subscribers.map(subscriber => {
-            bot.sendMessage(subscriber, message, { parse_mode: 'MarkdownV2' });
+            bot.sendMessage(subscriber, `${subscribe.title || 'Рассылка без названия'}\n\n${message}`, { parse_mode: 'MarkdownV2' });
         });
 
         res.json({ success: true });
