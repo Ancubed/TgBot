@@ -8,7 +8,7 @@ const botOptions = {
     polling: true
 }
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production' || process.env.PROXY) {
     botOptions.request = {
         proxy: config.proxy,
     }
