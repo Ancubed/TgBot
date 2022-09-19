@@ -12,6 +12,6 @@
         "tag": "@ancubed"
     },
     "mongoDB": {
-        "serverURI": "mongodb://default:caesar@62.76.152.217:27017"
+        "serverURI": "mongodb://default:caesar@192.168.217.76:27017"
     }
 }
