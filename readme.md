@@ -7,6 +7,7 @@ Own http telegram bot for my home server
 # Functions
 Users
 - Subscribe /Unsubscribe from channels
+
 Administrators
 - Create/Delete channels inside
 - Subscribe /Unsubscribe from channels
