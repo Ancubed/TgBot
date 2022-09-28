@@ -1,15 +1,14 @@
-# OSULibraryServiceTelegramBot
-Служебный бот Научной Библиотеки ОГУ
+# TgBot
+Own http telegram bot for my home server
 
-# Установка
-После скачивания, необходимо установить зависимости через пакетный менеджер [npm](https://www.npmjs.com/).
+# Install
 `npm install`
 
-# Запуск
-`npm run start` - Запуск приложения
+# Run
+`npm run start` - Run
 
-`npm run demon` - Запуск через nodemon
+`npm run demon` - Run through nodemon
 
-# Развертывание Docker v20.10.7
-1. `sudo docker build . -t webmaster/osu-lib-bot` - Сборка
-2. `sudo docker run --rm --network host -d webmaster/osu-lib-bot` - Запуск
+# Docker v20.10.7
+1. `sudo docker build . -t tgbot` - Build
+2. `sudo docker run --rm --network host -d tgbot` - Run
