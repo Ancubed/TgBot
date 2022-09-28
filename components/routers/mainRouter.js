@@ -3,6 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const createError = require('http-errors');
+const geoip = require('geoip-lite');
 
 const bot = require('../bot/bot');
 const botModel = require('../models/botModel');
@@ -58,7 +59,11 @@ router.post('/distribute-message', async (req, res, next) => {
 
 router.use(async (err, req, res, next) => {
     try {
-        bot.sendMessage(config.admin.chatId, `URL: ${req.method} - ${req.originalUrl}\nОшибка при обработке запроса Express:\nIp-адрес:${req.headers['x-forwarded-for'] || req.socket.remoteAddress || req.ip}\n${err}`);
+        const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || req.ip;
+        bot.sendMessage(config.admin.chatId, `URL: ${req.method} - ${req.originalUrl}\nОшибка при обработке запроса Express:
+        \nIp-адрес:${ip}\n${err}
+        \nUser-agent:${req.get('User-Agent') || 'Не известно'}\n${err}
+        \nGeo-info:${geoip.lookup(ip) || 'Не известно'}\n${err}`);
     } catch(err) {
         console.error(err);
     }
