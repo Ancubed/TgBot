@@ -58,7 +58,7 @@ router.post('/distribute-message', async (req, res, next) => {
 
 router.use(async (err, req, res, next) => {
     try {
-        bot.sendMessage(config.admin.chatId, `URL: ${req.method} - ${req.originalUrl}\nОшибка при обработке запроса Express:\nIp-адрес:${req.ips && req.ips.length > 0 ? req.ips : req.ip}\n${err}`);
+        bot.sendMessage(config.admin.chatId, `URL: ${req.method} - ${req.originalUrl}\nОшибка при обработке запроса Express:\nIp-адрес:${req.headers['x-forwarded-for'] || req.socket.remoteAddress || req.ip}\n${err}`);
     } catch(err) {
         console.error(err);
     }
