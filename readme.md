@@ -11,4 +11,4 @@ Own http telegram bot for my home server
 
 # Docker v20.10.7
 1. `sudo docker build . -t tgbot` - Build
-2. `sudo docker run --rm --network host -d tgbot` - Run
+2. `sudo docker build . -t tgbot --build-arg MONGO_URI=<URL> --build-arg PROXI_URI=<URL> --build-arg API_KEY=<KEY> --build-arg BOT_TOKEN=<TOKEN>` - Run
