@@ -63,7 +63,7 @@ router.use(async (err, req, res, next) => {
         bot.sendMessage(config.admin.chatId, `URL: ${req.method} - ${req.originalUrl}\nОшибка при обработке запроса Express:
         \nIp-адрес:${ip}\n
         \nUser-agent:${req.get('User-Agent') || 'Не известно'}\n
-        \nGeo-info:${geoip.lookup(ip) || 'Не известно'}\n${err}`);
+        \nGeo-info:${JSON.stringify(geoip.lookup(ip)) || 'Не известно'}\n${err}`);
     } catch(err) {
         console.error(err);
     }
