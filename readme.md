@@ -4,6 +4,15 @@ Own http telegram bot for my home server
 # Install
 `npm install`
 
+# Functions
+Users
+- Subscribe /Unsubscribe from channels
+Administrators
+- Create/Delete channels inside
+- Subscribe /Unsubscribe from channels
+
+Everything is inside the chat with the bot
+
 # Run
 `npm run start` - Run
 
