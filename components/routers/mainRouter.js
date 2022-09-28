@@ -61,8 +61,8 @@ router.use(async (err, req, res, next) => {
     try {
         const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || req.ip;
         bot.sendMessage(config.admin.chatId, `URL: ${req.method} - ${req.originalUrl}\nОшибка при обработке запроса Express:
-        \nIp-адрес:${ip}\n${err}
-        \nUser-agent:${req.get('User-Agent') || 'Не известно'}\n${err}
+        \nIp-адрес:${ip}\n
+        \nUser-agent:${req.get('User-Agent') || 'Не известно'}\n
         \nGeo-info:${geoip.lookup(ip) || 'Не известно'}\n${err}`);
     } catch(err) {
         console.error(err);
