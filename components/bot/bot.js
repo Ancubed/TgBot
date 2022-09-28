@@ -8,13 +8,13 @@ const botOptions = {
     polling: true
 }
 
-if (process.env.NODE_ENV !== 'production' || process.env.PROXY) {
+if (process.env.NODE_ENV !== 'production' || process.env.PROXY_URI) {
     botOptions.request = {
-        proxy: config.proxy,
+        proxy: process.env.PROXY_URI,
     }
 }
 
-const bot = new TelegramBot(config.bot.token, botOptions);
+const bot = new TelegramBot(process.env.BOT_TOKEN, botOptions);
 
 async function isAdmin(chatId) {
     if (chatId == config.admin.chatId) return true;

@@ -8,8 +8,7 @@ const bot = require('./components/bot/bot');
 
 const config = require('./config.json');
 
-const url = config.url;
-const port = config.port;
+const port = process.env.PORT || config.port;
 
 const app = express();
 

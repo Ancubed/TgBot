@@ -1,13 +1,24 @@
 FROM node:12
 
-WORKDIR /usr/src/osulibservicetelegrambot
+WORKDIR /usr/src/ancubedtgbot
 
 COPY package*.json ./
 
 RUN npm install
 
 ENV NODE_ENV=production
-ENV PROXY=true
+
+ARG MONGO_URI=${MONGO_URI}
+ENV MONGO_URI=${MONGO_URI}
+
+ARG PROXY_URI=${PROXY_URI}
+ENV PROXY_URI=${PROXY_URI}
+
+ARG API_KEY=${PROXY_URI}
+ENV API_KEY=${PROXY_URI}
+
+ARG BOT_TOKEN=${BOT_TOKEN}
+ENV BOT_TOKEN=${BOT_TOKEN}
 
 COPY . .
 

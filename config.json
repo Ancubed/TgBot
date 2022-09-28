@@ -1,17 +1,8 @@
 {
-    "bot": {
-        "token": "5129528650:AAEHDxGTIqWixw9oL941qyACI0cljbHXlsk"
-    },
-    "url": "",
     "port": 3000,
-    "proxy": "http://proxy.net.osu.ru:3128",
 
-    "apiKey": "e7745ae69a93f04ac8966aee7a4b2de1a7c3b8f5",
     "admin": {
         "chatId": 357979728,
         "tag": "@ancubed"
-    },
-    "mongoDB": {
-        "serverURI": "mongodb://default:caesar@192.168.217.76:27017"
     }
 }

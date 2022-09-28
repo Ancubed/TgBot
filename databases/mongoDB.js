@@ -6,7 +6,7 @@ const ObjectId = require('mongodb').ObjectID;
 const config = require('../config.json').mongoDB;
 
 // URI коннекта к базе монго
-const MONGODB_URI = process.env.SERVER_URI || config.serverURI;
+const MONGODB_URI = process.env.MONGO_URI;
 
 // Объект клиента mongo
 const mongoClient = new mongodb.MongoClient(MONGODB_URI, { useUnifiedTopology: true });
