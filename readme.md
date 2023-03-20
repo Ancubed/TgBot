@@ -6,11 +6,11 @@ Own http telegram bot for my home server
 
 # Functions
 Users
-- Subscribe /Unsubscribe from channels
+- Subscribe/Unsubscribe from channels
 
 Administrators
-- Create/Delete channels inside
-- Subscribe /Unsubscribe from channels
+- Create/Delete channels
+- Subscribe/Unsubscribe from channels
 
 Everything is inside the chat with the bot
 
